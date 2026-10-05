@@ -56,6 +56,11 @@ export const fieldPhotos: FieldPhoto[] = [
     featured: true,
     position: "50% 35%",
   },
+  {
+    src: "/images/field/sensor-station-team.jpg",
+    alt: "Abinava Yeshwanth KJ with two colleagues beside a field sensor station in a cotton field",
+    caption: "Sensor station in a cotton field, with the team",
+    position: "50% 42%",
+  },
   { alt: "", caption: "Eddy covariance flux tower" },
-  { alt: "", caption: "Canopy temperature sensors — Southwest Oklahoma" },
 ];

@@ -55,5 +55,10 @@ export const fieldPhotos: FieldPhoto[] = [
     caption: "Sensor station in a cotton field, with the team",
     position: "50% 42%",
   },
-  { alt: "", caption: "Eddy covariance flux tower" },
+  {
+    src: "/images/field/flux-tower.jpg",
+    alt: "Abinava Yeshwanth KJ standing beside an eddy covariance flux tower at the edge of a corn field",
+    caption: "Eddy covariance flux tower",
+    position: "50% 55%",
+  },
 ];

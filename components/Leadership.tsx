@@ -8,7 +8,7 @@ export default function Leadership() {
 
   return (
     <Section id="leadership">
-      <SectionHeader id="leadership" index="07" eyebrow="Beyond research" title="Leadership & community." />
+      <SectionHeader id="leadership" index="08" eyebrow="Beyond research" title="Leadership & community." />
 
       <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
         <div>

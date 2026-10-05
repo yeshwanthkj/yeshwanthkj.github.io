@@ -20,9 +20,10 @@ export function FeaturedResearchCard({ project, index }: { project: ResearchProj
   const flip = index % 2 === 1;
   return (
     <article
+      id={project.id}
       data-reveal
       aria-labelledby={`r-${project.id}`}
-      className="group overflow-hidden rounded-2xl border border-line bg-surface shadow-[var(--shadow)] transition-colors duration-300 hover:border-line-strong"
+      className="group scroll-mt-24 overflow-hidden rounded-2xl border border-line bg-surface shadow-[var(--shadow)] transition-colors duration-300 hover:border-line-strong"
     >
       <div className="grid lg:grid-cols-[1.15fr_1fr]">
         <div className={`p-6 sm:p-8 lg:p-10 ${flip ? "lg:order-2" : "lg:order-1"}`}>
@@ -90,7 +91,7 @@ export function CurrentResearchCard({ project }: { project: ResearchProject }) {
     <article
       data-reveal
       aria-labelledby={`r-${project.id}`}
-      className="flex h-full flex-col rounded-2xl border border-dashed border-line-strong bg-surface/60 p-6 transition-colors duration-300 hover:border-soil/60 hover:bg-surface"
+      className="lift flex h-full flex-col rounded-2xl border border-dashed border-line-strong bg-surface/60 p-6 transition-colors duration-300 hover:border-soil/60 hover:bg-surface"
     >
       <StatusBadge status={project.status} />
       <h3 id={`r-${project.id}`} className="mt-4 font-serif text-xl font-semibold leading-snug tracking-tight text-ink">

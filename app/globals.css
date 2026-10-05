@@ -236,3 +236,105 @@ html:not(.js) .timeline-progress {
     display: none;
   }
 }
+
+/* ───────────────────────── Dark "field at dusk" band (hero) ─────────────────────────
+   Re-scopes the tokens so any component inside renders dark, in both themes. */
+.band-dark {
+  --bg: #0a1512;
+  --surface: #10201b;
+  --surface-2: #142720;
+  --ink: #eef2ec;
+  --ink-2: #c3cec6;
+  --muted: #8fa198;
+  --line: #1f352d;
+  --line-strong: #2e4a3f;
+  --field: #93d0a6;
+  --field-strong: #b3e2c1;
+  --field-soft: #163126;
+  --water: #8cc4e8;
+  --water-soft: #12283a;
+  --soil: #d7b48a;
+  --soil-soft: #2c2318;
+  --on-accent: #0a1512;
+  color: var(--ink);
+  color-scheme: dark;
+}
+
+/* Satellite pass over the field map */
+.scan-line {
+  animation: scan 7s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+@keyframes scan {
+  0% {
+    transform: translateY(-15%);
+    opacity: 0;
+  }
+  10%,
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(115%);
+    opacity: 0;
+  }
+}
+
+/* Keyword ribbon */
+.marquee {
+  animation: marquee 60s linear infinite;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee,
+  .scan-line {
+    animation: none !important;
+  }
+  .scan-line {
+    display: none;
+  }
+}
+
+.float-y {
+  animation: float-y 6s ease-in-out infinite;
+}
+@keyframes float-y {
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Hero entrance: staggered fade-up */
+.rise {
+  animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+/* Gentle hover lift for cards */
+.lift {
+  transition:
+    transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.3s,
+    border-color 0.3s;
+}
+.lift:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+@media (prefers-reduced-motion: reduce) {
+  .lift:hover {
+    transform: none;
+  }
+  .float-y {
+    animation: none !important;
+  }
+}

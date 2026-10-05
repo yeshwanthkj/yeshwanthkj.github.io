@@ -6,9 +6,9 @@ export default function Experience() {
     <Section id="experience" className="border-y border-line bg-surface-2/40">
       <SectionHeader
         id="experience"
-        index="04"
+        index="05"
         eyebrow="Experience & education"
-        title="Where the work has happened."
+        title="Where I've worked and studied."
       />
 
       <div className="grid gap-16 lg:grid-cols-[1.35fr_1fr] lg:gap-16">

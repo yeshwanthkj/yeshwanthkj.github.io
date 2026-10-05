@@ -33,7 +33,7 @@ export default function Contact() {
           <div className="grid lg:grid-cols-[1fr_1fr]">
             <div className="relative p-7 sm:p-10 lg:p-12">
               <p className="eyebrow mb-4 flex items-center gap-3">
-                <span className="text-field">08</span>
+                <span className="text-field">09</span>
                 <span aria-hidden className="h-px w-8 bg-line-strong" />
                 <span>Contact</span>
               </p>

@@ -14,10 +14,10 @@ export default function Projects() {
     <Section id="projects" className="border-y border-line bg-surface-2/40">
       <SectionHeader
         id="projects"
-        index="06"
+        index="07"
         eyebrow="Toolkit & foundations"
-        title="The computer-science foundation underneath."
-        intro="Earlier projects from my undergraduate years and internship — the work that led to agricultural research — and the tools I use today."
+        title="Foundations in computer science."
+        intro="Earlier software and machine-learning projects, and the tools I use every day."
       />
 
       {/* Earlier projects */}

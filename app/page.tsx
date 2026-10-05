@@ -1,4 +1,6 @@
 import About from "@/components/About";
+import Approach from "@/components/Approach";
+import Marquee from "@/components/Marquee";
 import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
 import FieldWork from "@/components/FieldWork";
@@ -36,6 +38,8 @@ export default function Home() {
       <Navbar />
       <main id="main">
         <Hero />
+        <Marquee />
+        <Approach />
         <About />
         <Research />
         <Publications />

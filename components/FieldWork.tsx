@@ -9,14 +9,14 @@ export default function FieldWork() {
     <Section id="field">
       <SectionHeader
         id="field"
-        index="05"
+        index="06"
         eyebrow="Field research"
         title={
           <>
-            From code <span className="text-field">to the field.</span>
+            Grounded in <span className="text-field">real field data.</span>
           </>
         }
-        intro="Models are only as good as the measurements behind them. Alongside software and ML, I help install and maintain the sensor networks that produce the data — across research stations and producer fields in Oklahoma."
+        intro="Good models need good measurements. I help install and maintain sensor networks on research stations and growers' fields across Oklahoma."
       />
 
       <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-14">
@@ -58,21 +58,21 @@ export default function FieldWork() {
       </div>
 
       {/* Photo strip — placeholders until real field photos are added in data/field.ts */}
-      <div data-reveal className="mt-14 grid gap-3 sm:grid-cols-5">
+      <div data-reveal className="mt-14 grid gap-3 sm:grid-cols-2">
         {fieldPhotos.map((p) => (
           <figure
             key={p.caption}
-            className={`flex flex-col overflow-hidden rounded-2xl border border-line bg-surface ${
-              p.featured ? "sm:col-span-2 sm:row-span-2" : "sm:col-span-3"
+            className={`lift flex flex-col overflow-hidden rounded-2xl border border-line bg-surface ${
+              p.featured ? "sm:row-span-2" : ""
             }`}
           >
-            <div className={`relative ${p.featured ? "aspect-[4/5] sm:aspect-auto sm:min-h-[360px] sm:flex-1" : "aspect-[16/9] sm:aspect-[21/9]"}`}>
+            <div className={`relative ${p.featured ? "aspect-[4/5] sm:aspect-auto sm:min-h-[360px] sm:flex-1" : "aspect-[4/3]"}`}>
               {p.src ? (
                 <Image
                   src={p.src}
                   alt={p.alt}
                   fill
-                  sizes={p.featured ? "(min-width: 640px) 40vw, 100vw" : "(min-width: 640px) 60vw, 100vw"}
+                  sizes={p.featured ? "(min-width: 640px) 40vw, 100vw" : "(min-width: 640px) 50vw, 100vw"}
                   className="object-cover"
                   style={p.position ? { objectPosition: p.position } : undefined}
                   loading="lazy"

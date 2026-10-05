@@ -70,7 +70,7 @@ export default function Navbar() {
       className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300 ${
         scrolled || open
           ? "border-b border-line bg-bg/85 backdrop-blur-md"
-          : "border-b border-transparent bg-transparent"
+          : "band-dark border-b border-transparent bg-transparent"
       }`}
     >
       <a
@@ -82,7 +82,7 @@ export default function Navbar() {
       <div className="container-page flex h-16 items-center justify-between gap-4">
         <Brand />
 
-        <nav aria-label="Primary" className="hidden lg:block">
+        <nav aria-label="Primary" className="hidden xl:block">
           <ul className="flex items-center gap-0.5">
             {nav.map((item) => {
               const isActive = active === item.href.slice(1);
@@ -119,7 +119,7 @@ export default function Navbar() {
           <button
             ref={menuButton}
             type="button"
-            className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full text-ink hover:bg-surface-2 lg:hidden"
+            className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full text-ink hover:bg-surface-2 xl:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -134,7 +134,7 @@ export default function Navbar() {
       <div
         id="mobile-menu"
         hidden={!open}
-        className="h-[calc(100dvh-4rem)] overflow-y-auto border-t border-line bg-bg lg:hidden"
+        className="h-[calc(100dvh-4rem)] overflow-y-auto border-t border-line bg-bg xl:hidden"
       >
         <nav aria-label="Mobile" className="container-page py-6">
           <ul className="divide-y divide-line">

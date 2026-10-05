@@ -10,10 +10,10 @@ export default function Research() {
     <Section id="research" className="border-y border-line bg-surface-2/40">
       <SectionHeader
         id="research"
-        index="02"
-        eyebrow="Featured research"
-        title="Software, models and data for irrigation decisions."
-        intro="Each project connects a computing method to a concrete water-management question — from scheduling irrigation to predicting what is happening below the surface."
+        index="03"
+        eyebrow="Research & projects"
+        title="Building decision support for irrigation."
+        intro="Projects that connect software, machine learning and field data to everyday irrigation decisions."
       />
 
       <div className="space-y-6 sm:space-y-8">

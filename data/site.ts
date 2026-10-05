@@ -7,9 +7,9 @@ export const site = {
   fullName: "Abinava Yeshwanth Kalayambakam Janardhan",
   shortName: "KJ",
   tagline: "AI • Agriculture • Water",
-  roles: ["PhD Researcher", "Software Engineer", "Agricultural AI"],
+  roles: ["Irrigation Science", "Machine Learning", "Software Engineering"],
   intro:
-    "I bridge computer science, machine learning and agricultural engineering to build data-driven tools for irrigation and sustainable water management.",
+    "I build AI-powered decision support systems that help growers irrigate at the right time, with the right amount of water.",
   affiliation: "Biosystems & Agricultural Engineering, Oklahoma State University",
   location: "Stillwater, Oklahoma",
 
@@ -33,6 +33,7 @@ export const site = {
 } as const;
 
 export const nav = [
+  { label: "Approach", href: "#approach" },
   { label: "About", href: "#about" },
   { label: "Research", href: "#research" },
   { label: "Publications", href: "#publications" },

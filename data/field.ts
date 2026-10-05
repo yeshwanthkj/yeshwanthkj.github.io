@@ -50,13 +50,6 @@ export const fieldActivities: FieldActivity[] = [
  */
 export const fieldPhotos: FieldPhoto[] = [
   {
-    src: "/images/field/kj-in-the-field.jpg",
-    alt: "Abinava Yeshwanth KJ standing in a green crop field under a blue sky",
-    caption: "In the field",
-    featured: true,
-    position: "50% 35%",
-  },
-  {
     src: "/images/field/sensor-station-team.jpg",
     alt: "Abinava Yeshwanth KJ with two colleagues beside a field sensor station in a cotton field",
     caption: "Sensor station in a cotton field, with the team",

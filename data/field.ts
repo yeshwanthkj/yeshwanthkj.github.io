@@ -49,7 +49,13 @@ export const fieldActivities: FieldActivity[] = [
  * Entries without `src` render as labelled placeholders.
  */
 export const fieldPhotos: FieldPhoto[] = [
-  { alt: "", caption: "Sensor installation — Oklahoma Panhandle" },
+  {
+    src: "/images/field/kj-in-the-field.jpg",
+    alt: "Abinava Yeshwanth KJ standing in a green crop field under a blue sky",
+    caption: "In the field",
+    featured: true,
+    position: "50% 35%",
+  },
   { alt: "", caption: "Eddy covariance flux tower" },
   { alt: "", caption: "Canopy temperature sensors — Southwest Oklahoma" },
 ];

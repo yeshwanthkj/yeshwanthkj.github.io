@@ -38,6 +38,7 @@ export default function Leadership() {
                 <div>
                   <p className="text-[15px] font-medium text-ink">{l.role}</p>
                   <p className="text-sm text-muted">{l.org}</p>
+                  {l.period && <p className="mt-0.5 font-mono text-[11px] text-muted">{l.period}</p>}
                 </div>
                 {l.points && <p className="text-[14px] leading-relaxed text-ink-2">{l.points.join(" ")}</p>}
               </li>

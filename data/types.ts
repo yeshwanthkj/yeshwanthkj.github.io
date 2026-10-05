@@ -93,6 +93,10 @@ export interface FieldPhoto {
   src?: string;
   alt: string;
   caption: string;
+  /** Shown larger, spanning two rows on wide screens (best for portrait photos) */
+  featured?: boolean;
+  /** CSS object-position for cropping, e.g. "50% 30%" */
+  position?: string;
 }
 
 export interface SkillGroup {

@@ -22,6 +22,7 @@ export const leadership: LeadershipRole[] = [
     id: "iste",
     role: "CSE Executive",
     org: "ISTE Student Chapter",
+    period: "Jun 2021 – Jan 2023",
     points: [
       "Organized and conducted technical and student events.",
       "Helped run a techno-cultural fest in a leadership capacity.",
@@ -32,6 +33,7 @@ export const leadership: LeadershipRole[] = [
     id: "iucee",
     role: "Campus Ambassador",
     org: "IUCEE",
+    period: "Jun 2021 – Jan 2023",
     points: ["Promoted campus activities.", "Contributed to club development and student engagement."],
     tier: "earlier",
   },
@@ -39,6 +41,7 @@ export const leadership: LeadershipRole[] = [
     id: "ceta",
     role: "Social Media Handler",
     org: "CETA",
+    period: "Jun 2021 – Jan 2023",
     points: ["Supported social-media communication.", "Conducted outreach activities within the college."],
     tier: "earlier",
   },

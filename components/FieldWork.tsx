@@ -58,12 +58,25 @@ export default function FieldWork() {
       </div>
 
       {/* Photo strip — placeholders until real field photos are added in data/field.ts */}
-      <div data-reveal className="mt-14 grid gap-3 sm:grid-cols-3">
+      <div data-reveal className="mt-14 grid gap-3 sm:grid-cols-5">
         {fieldPhotos.map((p) => (
-          <figure key={p.caption} className="overflow-hidden rounded-2xl border border-line bg-surface">
-            <div className="relative aspect-[4/3]">
+          <figure
+            key={p.caption}
+            className={`flex flex-col overflow-hidden rounded-2xl border border-line bg-surface ${
+              p.featured ? "sm:col-span-2 sm:row-span-2" : "sm:col-span-3"
+            }`}
+          >
+            <div className={`relative ${p.featured ? "aspect-[4/5] sm:aspect-auto sm:min-h-[360px] sm:flex-1" : "aspect-[16/9] sm:aspect-[21/9]"}`}>
               {p.src ? (
-                <Image src={p.src} alt={p.alt} fill sizes="(min-width: 640px) 33vw, 100vw" className="object-cover" loading="lazy" />
+                <Image
+                  src={p.src}
+                  alt={p.alt}
+                  fill
+                  sizes={p.featured ? "(min-width: 640px) 40vw, 100vw" : "(min-width: 640px) 60vw, 100vw"}
+                  className="object-cover"
+                  style={p.position ? { objectPosition: p.position } : undefined}
+                  loading="lazy"
+                />
               ) : (
                 <div className="grid-texture flex h-full w-full flex-col items-center justify-center gap-2 bg-surface-2/60 text-muted">
                   <Camera width={22} height={22} />

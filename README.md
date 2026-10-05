@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Abinava Yeshwanth KJ — Research Portfolio
 
-## Getting Started
+**AI • Agriculture • Water.** Personal research website built with Next.js (App Router), TypeScript and Tailwind CSS v4, exported as a static site and deployed to GitHub Pages.
 
-First, run the development server:
+## Run locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # static export → ./out
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+data/                 ← ALL portfolio content (edit these, not the components)
+  site.ts             name, intro, email, links, CV path, nav, journey, interests
+  research.ts         featured projects + ongoing research
+  publications.ts     papers, oral presentations, posters
+  experience.ts       experience timeline + education
+  field.ts            field-work activities + field photo slots
+  leadership.ts       leadership roles + professional activities
+  skills.ts           toolkit groups + earlier (foundation) projects
+  types.ts            shapes of the data above
+components/           reusable, data-driven sections
+  graphics/           hand-built SVG schematics (ecosystem, field→grid, soil profile, Oklahoma map…)
+public/
+  cv/Abinava-Yeshwanth-KJ-CV.pdf   ← the CV served by every "Download CV" button
+  images/field/                    ← put field photographs here
+app/                  layout, metadata/SEO, icon, OpenGraph image, sitemap, robots
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Common updates
 
-## Learn More
+**Add a research project** — append an object to `data/research.ts`.
+`featured: true` gives a large card (set `visual` to `"oasis" | "soil-profile" | "pipeline"` or `"none"`);
+`featured: false` gives a compact card under *Current research directions*. Use `status: "ongoing"` for work without results yet.
 
-To learn more about Next.js, take a look at the following resources:
+**Add a publication** — append to `data/publications.ts` with `kind: "paper" | "oral" | "poster"`.
+Entries are sorted by year automatically, filter counts update themselves, and your name is bolded automatically
+(variants listed in `selfNames`). Only add `doi` when a real DOI exists.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Replace the CV** — overwrite `public/cv/Abinava-Yeshwanth-KJ-CV.pdf` with the new file (same name). Nothing else changes.
+Remove your phone number and membership IDs from the public copy first.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Add field photos** — copy images into `public/images/field/`, then in `data/field.ts` set
+`src: "/images/field/your-photo.jpg"` and a descriptive `alt` on each entry. Empty entries show a placeholder.
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Every push to `main` builds and publishes the site via `.github/workflows/deploy.yml` (GitHub Actions → GitHub Pages).
+If you later use a custom domain, update `site.url` in `data/site.ts`.

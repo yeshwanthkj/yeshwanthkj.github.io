@@ -1,26 +1,238 @@
 @import "tailwindcss";
 
+/* ───────────────────────────────────────────────────────────
+   Design tokens
+   field = agriculture (primary) · water = secondary · soil = warm neutral
+   ─────────────────────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #f6f5f0;
+  --surface: #ffffff;
+  --surface-2: #eeede6;
+  --ink: #13202b;
+  --ink-2: #364450;
+  --muted: #5b6770;
+  --line: #dcdad1;
+  --line-strong: #c5c2b6;
+
+  --field: #2f5d46;
+  --field-strong: #244a37;
+  --field-soft: #e2ebe4;
+  --water: #2b6688;
+  --water-soft: #e0eaf0;
+  --soil: #8a6a4a;
+  --soil-soft: #f0e8dd;
+
+  --on-accent: #ffffff;
+  --shadow: 0 1px 2px rgb(19 32 43 / 0.04), 0 8px 24px -12px rgb(19 32 43 / 0.12);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0d1317;
+  --surface: #131b21;
+  --surface-2: #19232a;
+  --ink: #e6e9e5;
+  --ink-2: #bcc4c5;
+  --muted: #8f9a9e;
+  --line: #24303a;
+  --line-strong: #33424d;
+
+  --field: #8cc2a3;
+  --field-strong: #a9d6bb;
+  --field-soft: #16281f;
+  --water: #86b9da;
+  --water-soft: #13232f;
+  --soil: #c9a47e;
+  --soil-soft: #261f18;
+
+  --on-accent: #0d1317;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 12px 32px -16px rgb(0 0 0 / 0.6);
+  color-scheme: dark;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-field: var(--field);
+  --color-field-strong: var(--field-strong);
+  --color-field-soft: var(--field-soft);
+  --color-water: var(--water);
+  --color-water-soft: var(--water-soft);
+  --color-soil: var(--soil);
+  --color-soil-soft: var(--soil-soft);
+  --color-on-accent: var(--on-accent);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-serif4), ui-serif, Georgia, serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ───────────────────────── Base ───────────────────────── */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01";
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--field-soft);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--water);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+
+/* ───────────────────────── Utilities ───────────────────────── */
+@utility container-page {
+  width: 100%;
+  max-width: 76rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  @media (width >= 40rem) {
+    padding-inline: 1.5rem;
+  }
+  @media (width >= 64rem) {
+    padding-inline: 2rem;
+  }
+}
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Faint data-grid texture */
+@utility grid-texture {
+  background-image:
+    linear-gradient(to right, var(--line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ───────────────────────── Reveal on scroll ─────────────────────────
+   Only hidden when JS is running (html.js), so content is never lost. */
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+html.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ───────────────────────── Research graphics ───────────────────────── */
+.flow-in {
+  stroke-dasharray: 3 7;
+  animation: flow 2.4s linear infinite;
+}
+.flow-out {
+  stroke-dasharray: 3 7;
+  animation: flow 2.4s linear infinite reverse;
+}
+@keyframes flow {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+.pivot-arm {
+  transform-origin: 260px 260px;
+  animation: spin 48s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sensor-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulse 3.2s ease-out infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  70%,
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+.draw-line {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  transition: stroke-dashoffset 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s;
+}
+.is-visible .draw-line,
+html:not(.js) .draw-line {
+  stroke-dashoffset: 0;
+}
+
+/* Timeline progress line */
+.timeline-progress {
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 1.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.is-visible .timeline-progress,
+html:not(.js) .timeline-progress {
+  transform: scaleY(1);
+}
+
+/* ───────────────────────── Reduced motion ───────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+  html.js [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+  .sensor-pulse {
+    display: none;
+  }
 }

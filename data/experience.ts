@@ -5,7 +5,7 @@ export const experience: Experience[] = [
     id: "osu-gra",
     role: "Graduate Research Assistant",
     org: "Oklahoma State University",
-    unit: "Biosystems & Agricultural Engineering · RISE Lab (Dr. Sumon Datta)",
+    unit: "Biosystems & Agricultural Engineering · RISE Lab — Research in Irrigation Scheduling and Engineering (Dr. Sumon Datta)",
     location: "Stillwater, OK",
     start: "May 2024",
     end: "Present",

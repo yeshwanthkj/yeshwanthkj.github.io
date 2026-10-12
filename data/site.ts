@@ -32,6 +32,7 @@ export const site = {
   /** Research group and advisor */
   lab: {
     name: "RISE Lab",
+    fullName: "Research in Irrigation Scheduling and Engineering",
     pi: "Dr. Sumon Datta",
     piUrl: "https://experts.okstate.edu/sumon.datta",
   },

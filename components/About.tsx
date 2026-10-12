@@ -52,7 +52,7 @@ export default function About() {
               forecasts for crop-water models, and work in the field installing the sensors that make it all possible.
             </p>
             <p>
-              I&apos;m part of the <span className="text-ink">{site.lab.name}</span>, led by{" "}
+              I&apos;m part of the <span className="text-ink">{site.lab.name}</span> ({site.lab.fullName}), led by{" "}
               <a
                 href={site.lab.piUrl}
                 target="_blank"

@@ -69,7 +69,7 @@ export default function Hero() {
               <span>PhD Researcher · {site.affiliation}</span>
             </p>
             <p className="pl-6">
-              {site.lab.name} ·{" "}
+              <abbr title={site.lab.fullName} className="no-underline">{site.lab.name}</abbr> ·{" "}
               <a href={site.lab.piUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 text-ink-2 underline decoration-line-strong underline-offset-4 hover:text-field">
                 {site.lab.pi}
                 <ArrowUpRight width={12} height={12} />

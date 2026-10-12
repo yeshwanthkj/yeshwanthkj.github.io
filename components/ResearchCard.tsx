@@ -36,6 +36,7 @@ export function FeaturedResearchCard({ project, index }: { project: ResearchProj
             {project.title}
           </h3>
           {project.subtitle && <p className="mt-1.5 text-[15px] text-muted">{project.subtitle}</p>}
+          {project.note && <p className="mt-1 font-mono text-[11px] text-muted">{project.note}</p>}
           <p className="mt-5 text-[1.02rem] leading-relaxed text-ink-2">{project.summary}</p>
 
           {project.highlights && (

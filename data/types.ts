@@ -8,6 +8,8 @@ export interface ResearchProject {
   title: string;
   /** Optional long form / expansion shown under the title */
   subtitle?: string;
+  /** Small footnote under the subtitle, e.g. a former name */
+  note?: string;
   categories: string[];
   status: Status;
   /** One or two sentence summary */

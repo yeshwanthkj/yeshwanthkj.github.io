@@ -9,7 +9,7 @@ export default function Publications() {
     <Section id="publications">
       <SectionHeader
         id="publications"
-        index="04"
+        index="05"
         eyebrow="Publications & presentations"
         title="Papers, talks and posters."
         intro={`${papers} papers and ${talks} conference presentations across IEEE, ASABE and Oklahoma water-research venues.`}

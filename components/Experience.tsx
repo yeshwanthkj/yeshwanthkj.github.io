@@ -6,7 +6,7 @@ export default function Experience() {
     <Section id="experience" className="border-y border-line bg-surface-2/40">
       <SectionHeader
         id="experience"
-        index="05"
+        index="06"
         eyebrow="Experience & education"
         title="Where I've worked and studied."
       />

@@ -29,11 +29,18 @@ export const site = {
     github: "https://github.com/yeshwanthkj",
   },
 
+  /** Research group and advisor */
+  lab: {
+    name: "RISE Lab",
+    pi: "Dr. Sumon Datta",
+    piUrl: "https://experts.okstate.edu/sumon.datta",
+  },
+
   interests: ["Cricket", "Badminton", "Chess", "Carrom", "Reading"],
 } as const;
 
 export const nav = [
-  { label: "Approach", href: "#approach" },
+  { label: "Skills", href: "#expertise" },
   { label: "About", href: "#about" },
   { label: "Research", href: "#research" },
   { label: "Publications", href: "#publications" },

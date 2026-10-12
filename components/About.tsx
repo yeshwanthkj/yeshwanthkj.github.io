@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { journey, researchInterests } from "@/data/site";
+import { journey, researchInterests, site } from "@/data/site";
 import { Section, SectionHeader } from "./ui";
 
 /** Colour drifts from computing (water/ink) to agriculture (field) along the journey. */
@@ -10,7 +10,7 @@ export default function About() {
     <Section id="about" className="border-t border-line">
       <SectionHeader
         id="about"
-        index="02"
+        index="03"
         eyebrow="About"
         title={
           <>
@@ -50,6 +50,18 @@ export default function About() {
               As a PhD researcher in Biosystems &amp; Agricultural Engineering at Oklahoma State University, I build
               irrigation decision support tools, develop machine-learning models for soil moisture, process weather
               forecasts for crop-water models, and work in the field installing the sensors that make it all possible.
+            </p>
+            <p>
+              I&apos;m part of the <span className="text-ink">{site.lab.name}</span>, led by{" "}
+              <a
+                href={site.lab.piUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-field underline decoration-field/40 underline-offset-4 hover:decoration-field"
+              >
+                {site.lab.pi}
+              </a>
+              , where I work on irrigation decision support with him and the team.
             </p>
           </div>
 

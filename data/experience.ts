@@ -5,7 +5,7 @@ export const experience: Experience[] = [
     id: "osu-gra",
     role: "Graduate Research Assistant",
     org: "Oklahoma State University",
-    unit: "Biosystems & Agricultural Engineering",
+    unit: "Biosystems & Agricultural Engineering · RISE Lab (Dr. Sumon Datta)",
     location: "Stillwater, OK",
     start: "May 2024",
     end: "Present",
@@ -13,7 +13,7 @@ export const experience: Experience[] = [
     summary:
       "Building the software, data pipelines and models behind irrigation decision support — and helping instrument the fields that feed them.",
     points: [
-      "Develop OASIS, a full-stack irrigation scheduling tool (React, FastAPI, Plotly) for Oklahoma producers.",
+      "Develop OASIS (Operational Agriculture and Soil Information System), a full-stack irrigation decision support platform (React, FastAPI, Plotly).",
       "Built and compared five ML models for multi-depth soil moisture prediction.",
       "Engineered NOAA NDFD GRIB2 pipelines producing daily 7-day forecasts across Mesonet stations.",
       "Field instrumentation and bi-weekly data collection across Oklahoma research sites.",

@@ -10,7 +10,8 @@ export const research: ResearchProject[] = [
   {
     id: "oasis",
     title: "OASIS",
-    subtitle: "Oklahoma Agricultural Scientific Irrigation Scheduler",
+    subtitle: "Operational Agriculture and Soil Information System",
+    note: "Formerly the Oklahoma Agricultural Scientific Irrigation Scheduler",
     categories: ["Decision Support", "Irrigation", "Full-Stack Engineering"],
     status: "active",
     featured: true,

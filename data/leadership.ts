@@ -59,6 +59,6 @@ export const professional = [
   {
     title: "PhD Interview Panel",
     detail:
-      "Panel member for BAE PhD applicant interviews (Irrigation Research Laboratory); set tasks to evaluate conceptual and written skills",
+      "Panel member for BAE PhD applicant interviews (RISE Lab); set tasks to evaluate conceptual and written skills",
   },
 ] as const;

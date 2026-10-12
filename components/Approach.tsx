@@ -75,7 +75,7 @@ export default function Approach() {
       <Contours className="absolute -right-40 -top-20 -z-10 w-[640px] opacity-40" />
       <SectionHeader
         id="approach"
-        index="01"
+        index="02"
         eyebrow="Decision support for irrigation"
         title={
           <>

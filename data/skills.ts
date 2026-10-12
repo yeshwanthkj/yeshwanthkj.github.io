@@ -2,24 +2,34 @@ import type { EarlierProject, SkillGroup } from "./types";
 
 export const skills: SkillGroup[] = [
   {
+    id: "irrigation",
+    title: "Irrigation Science",
+    items: ["Irrigation scheduling", "FAO-56 / PyFAO56", "Soil water balance", "Evapotranspiration", "Rosetta soil properties", "Decision support systems"],
+  },
+  {
     id: "ml",
-    title: "AI & Machine Learning",
-    items: ["Python", "scikit-learn", "TensorFlow", "PyTorch", "Random Forest", "XGBoost", "LightGBM", "LSTM", "Transformers", "OpenCV", "Generative AI"],
+    title: "Machine Learning & AI",
+    items: ["Random Forest", "XGBoost", "LightGBM", "LSTM", "Transformers", "scikit-learn", "TensorFlow", "PyTorch", "OpenCV", "Generative AI"],
   },
   {
     id: "swe",
-    title: "Software Engineering",
-    items: ["React", "FastAPI", "Flask", "REST / SOAP APIs", "Docker", "Git", "Linux", "AWS", "JavaScript", "C++", "Java"],
+    title: "Software Development",
+    items: ["React", "FastAPI", "Flask", "REST / SOAP APIs", "Docker", "AWS", "Git", "Linux", "JavaScript", "C++", "Java"],
   },
   {
     id: "data",
     title: "Data Engineering",
-    items: ["Pandas", "NumPy", "SQL / SQLite", "Plotly", "Batch processing", "Parallel processing", "HPC"],
+    items: ["Python", "Pandas", "NumPy", "SQL / SQLite", "Plotly", "Batch & parallel processing", "HPC"],
   },
   {
-    id: "ag",
-    title: "Agricultural & Geospatial",
-    items: ["PyFAO56 / FAO-56", "Rosetta", "NOAA NDFD / GRIB2", "Oklahoma Mesonet", "ArcGIS", "Google Earth Engine", "Irrigation modeling"],
+    id: "field",
+    title: "Field Instrumentation",
+    items: ["Soil moisture sensors", "Rain gauges", "IRT canopy temperature", "Eddy covariance", "ZL6 data loggers"],
+  },
+  {
+    id: "geo",
+    title: "Weather & Geospatial",
+    items: ["NOAA NDFD / GRIB2", "Oklahoma Mesonet", "Google Earth Engine", "ArcGIS", "OpenET"],
   },
 ];
 

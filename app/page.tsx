@@ -3,6 +3,7 @@ import Approach from "@/components/Approach";
 import Marquee from "@/components/Marquee";
 import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
+import Expertise from "@/components/Expertise";
 import FieldWork from "@/components/FieldWork";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
@@ -39,6 +40,7 @@ export default function Home() {
       <main id="main">
         <Hero />
         <Marquee />
+        <Expertise />
         <Approach />
         <About />
         <Research />

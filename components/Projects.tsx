@@ -1,23 +1,16 @@
-import { earlierProjects, skills } from "@/data/skills";
+import { earlierProjects } from "@/data/skills";
 import { ArrowUpRight } from "./Icons";
 import { Section, SectionHeader } from "./ui";
-
-const groupAccent: Record<string, string> = {
-  ml: "text-water",
-  swe: "text-ink-2",
-  data: "text-water",
-  ag: "text-field",
-};
 
 export default function Projects() {
   return (
     <Section id="projects" className="border-y border-line bg-surface-2/40">
       <SectionHeader
         id="projects"
-        index="07"
-        eyebrow="Toolkit & foundations"
+        index="08"
+        eyebrow="Earlier projects"
         title="Foundations in computer science."
-        intro="Earlier software and machine-learning projects, and the tools I use every day."
+        intro="Software and machine-learning projects from before agricultural research — the foundation for today's work."
       />
 
       {/* Earlier projects */}
@@ -44,24 +37,6 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* Skills */}
-      <div className="mt-16">
-        <h3 data-reveal className="eyebrow mb-6">Toolkit</h3>
-        <div data-reveal className="grid overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4" style={{ gap: 1 }}>
-          {skills.map((g) => (
-            <div key={g.id} className="bg-surface p-6">
-              <h4 className={`text-sm font-semibold tracking-tight ${groupAccent[g.id] ?? "text-ink"}`}>{g.title}</h4>
-              <ul className="mt-4 space-y-1.5">
-                {g.items.map((s) => (
-                  <li key={s} className="text-[14px] text-ink-2">
-                    {s}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
     </Section>
   );
 }

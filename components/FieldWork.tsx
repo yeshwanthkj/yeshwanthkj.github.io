@@ -9,7 +9,7 @@ export default function FieldWork() {
     <Section id="field">
       <SectionHeader
         id="field"
-        index="06"
+        index="07"
         eyebrow="Field research"
         title={
           <>
